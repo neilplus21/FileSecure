@@ -1,2 +1,2 @@
 # FileSecure
-Java - base file hiding application
+Java - based file hiding application
