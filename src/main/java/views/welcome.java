@@ -62,7 +62,6 @@ public class Welcome {
         String name = sc.nextLine();
         System.out.println("Enter email");
         String email = sc.nextLine();
-        if(email.)
         String genOTP = generateotp.getOTP();
         sendotp.sendOTP(email, genOTP);
         System.out.println("Enter the otp");
