@@ -2,9 +2,9 @@ package views;
 
 import dao.userdao;
 import model.user;
-import service.GenerateOTP;
-import service.SendOTPService;
-import service.UserService;
+import service.sendotp;
+import service.userservice;
+import service.generateotp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,8 +38,8 @@ public class Welcome {
         String email = sc.nextLine();
         try {
             if(userdao.isExists(email)) {
-                String genOTP = GenerateOTP.getOTP();
-                SendOTPService.sendOTP(email, genOTP);
+                String genOTP = generateotp.getOTP();
+                sendotp.sendOTP(email, genOTP);
                 System.out.println("Enter the otp");
                 String otp = sc.nextLine();
                 if(otp.equals(genOTP)) {
@@ -62,13 +62,14 @@ public class Welcome {
         String name = sc.nextLine();
         System.out.println("Enter email");
         String email = sc.nextLine();
-        String genOTP = GenerateOTP.getOTP();
-        SendOTPService.sendOTP(email, genOTP);
+        if(email.)
+        String genOTP = generateotp.getOTP();
+        sendotp.sendOTP(email, genOTP);
         System.out.println("Enter the otp");
         String otp = sc.nextLine();
         if(otp.equals(genOTP)) {
             user user = new user(name, email);
-            int response = UserService.saveUser(user);
+            int response = userservice.saveuser(user);
             switch (response) {
                 case 0 -> System.out.println("User registered");
                 case 1 -> System.out.println("User already exists");
